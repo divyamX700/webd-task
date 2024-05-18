@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .paperheader {
+      background: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(112, 111, 111));
+      color: white;
+      margin-top: 0;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .paperheader h1 {
+      font-family: merriweather;
+      font-size: 34px;
+      margin-top: 0;
+      font-weight: 100;
+      padding-left: 16px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      margin-bottom: 0;
+    }
+
+    .capital-header {
+      font-size: 46px;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      padding-left: 16px;
+      justify-content: space-between;
+    }
+
+    .menu-items,
+    .headline,
+    .stats {
+      display: flex;
+      align-items: center;
+    }
+
+    .category {
+      margin-top: 0;
+      display: flex;
+      color: black;
+      padding-left: 16px;
+      padding-top: 14px;
+      padding-bottom: 14px;
+      padding-right: 16px;
+      font-family: Roboto;
+      font-size: 16px;
+      margin-right: 0;
+      transition: color 150ms;
+      transition: background-color 150ms;
+      cursor: pointer;
+    }
+
+    .category:hover {
+      color: white;
+      background-color: black;
+    }
+
+    .arrow {
+      height: 14px;
+      margin-left: 8px;
+    }
+
+    .search-icon {
+      display: flex;
+      align-items: center;
+    }
+
+    .glassicon {
+      height: 32px;
+      padding-right: 30px;
+      cursor: pointer;
+      padding-top: 5px;
+    }
+
+    .gray-line {
+      display: flex;
+      align-items: center;
+      padding-left: 16px;
+      justify-content: space-between;
+      background-color: rgb(230, 228, 228);
+    }
+
+    .thunder {
+      margin-right: 3px;
+    }
+
+    .breaking-news {
+      padding-left: 10px;
+      font-size: 16px;
+      font-family: Roboto;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .local,
+    .date {
+      color: rgb(104, 101, 101);
+      font-size: 14px;
+      font-family: Roboto;
+      margin-left: 40px;
+    }
+
+    .cloud {
+      height: 28px;
+    }
+
+    .date {
+      margin-left: 25px;
+      padding-right: 15px;
+    }
+
+    .wrapper {
+      margin-bottom: 40px;
+      display: flex;
+      position: relative;
+    }
+
+    .news1 {
+      margin-top: 50px;
+      margin-left: 16px;
+      display: flex;
+      vertical-align: top;
+      width: 430px;
+      height: 480px;
+      position: relative
+    }
+
+    .img1 {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .cat {
+      position: absolute;
+      bottom: 175px;
+      left: 30px;
+    }
+
+    .catwindow {
+      display: inline-block;
+      color: white;
+      background-color: black;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      padding-left: 8px;
+      padding-right: 8px;
+      font-family: Roboto;
+      font-size: 14px;
+      border-radius: 20px;
+      margin-right: 6px;
+    }
+
+    .text1 {
+      position: absolute;
+      left: 30px;
+      bottom: 90px;
+      font-family: Roboto;
+      font-size: 22px;
+      width: 340px;
+      text-align: left;
+      color: white;
+      font-weight: bold;
+      background-color: rgba(48, 47, 47, 0.5);
+    }
+
+    .author {
+      position: absolute;
+      bottom: 40px;
+      left: 30px;
+      display: flex;
+      align-items: center;
+    }
+
+    .news2 {
+      margin-top: 50px;
+      margin-left: 20px;
+      display: flex;
+      vertical-align: top;
+      width: 270px;
+      height: 480px;
+      position: relative;
+    }
+
+    .img2 {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .text2,
+    .text3 {
+      position: absolute;
+      left: 30px;
+      bottom: 100px;
+      font-family: Roboto;
+      font-size: 18px;
+      width: 220px;
+      text-align: left;
+      color: white;
+      font-weight: bold;
+      background-color: rgba(48, 47, 47, 0.5);
+    }
+
+    .text3 {
+      bottom: 100px
+    }
+
+    .channel-logo {
+      width: 35px;
+      margin-right: 10px;
+    }
+
+    .logo {
+      width: 100%;
+      border: none;
+      border-radius: 20px;
+    }
+
+    .author-name {
+      font-family: Roboto;
+      color: white;
+      font-size: 14px;
+      margin-right: 20px;
+      font-weight: 500;
+    }
+
+    .calendar,
+    .sidebar-calendar {
+      width: 16px;
+      height: 16px;
+      stroke: white;
+    }
+
+    .post-date {
+      align-items: center;
+      margin-left: 8px;
+      font-family: Roboto;
+      color: white;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .vertical-news {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .news3 {
+      height: 230px;
+      width: 270px;
+      margin-top: 50px;
+      margin-left: 20px;
+      display: flex;
+      vertical-align: top;
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .img3 {
+      
+      width: 270px;
+      height: 230px;
+      border-radius: 8px;
+    }
+
+    .news4 {
+      height: 230px;
+      width: 270px;
+      margin-top: 10px;
+      margin-left: 20px;
+      display: flex;
+      vertical-align: top;
+      position: relative;
+    }
+
+    .img4 {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .sidebar {
+      width: 380px;
+      height: 500px;
+      overflow-y: scroll;
+      position: absolute;
+      right: 0;
+      top: 50px;
+      padding-left: 0px;
+      padding-right: 30px;
+    }
+
+    .sidebar-news {
+      margin-bottom: 20px;
+      display: flex;
+      border: none;
+      border-radius: 4px;
+      box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+      margin-left: 5px;
+    }
+
+    .sidebar-img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+      padding: 5px 5px 2px 5px;
+    }
+
+    .sidebar-text {
+      margin-top: 12px;
+      margin-left: 8px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .latestnav {
+      display: flex;
+      margin-bottom: 15px;
+      width: 380px;
+      margin-top: 5px;
+      margin-left: 5px;
+      border-radius: 4px;
+      box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.15);
+    }
+
+    .nav-items {
+      width: 190px;
+      color: black;
+      padding-left: 50px;
+      padding-top: 25px;
+      padding-right: 50px;
+      padding-bottom: 25px;
+      text-align: center;
+      font-family: Roboto;
+      font-size: 20px;
+      transition: color 150ms;
+      cursor: pointer;
+      transition: background-color 150ms;
+      border-radius: 4px;
+    }
+
+    .nav-items:hover {
+      background-color: black;
+      color: white;
+    }
+
+    .sidebar-headline {
+      font-family: Roboto;
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    .sidebar-calendar {
+      stroke: rgb(104, 101, 101);
+      margin-right: 8px;
+    }
+
+    .sidebar-date {
+      margin-top: 8px;
+      font-family: roboto;
+      font-size: 15px;
+      color: rgb(104, 101, 101);
+      position: absolute;
+      bottom: 15px;
+      display: flex;
+    }
+  </style>
+
+</head>
+
+<body>
+  <header class="paperheader">
+    <h1><span class="capital-header">T</span>HE<span class="capital-header">N</span>EWS<span
+        class="capital-header">H</span>IVE</h1>
+  </header>
+
+  <div class="menu">
+    <div class="menu-items">
+      <div class="category">
+        HOME
+      </div>
+      <div class="category">
+        NEWS
+      </div>
+      <div class="category">
+        WORLD
+      </div>
+      <div class="category">
+        BUSINESS
+      </div>
+      <div class="category">
+        POLITICS
+      </div>
+      <div class="category">
+        ENTERTAINMENT
+      </div>
+      <div class="category">
+        SPORTS<img class="arrow" src="down-arrow-5.jpeg">
+      </div>
+    </div>
+    <div class="search-icon">
+      <img class="glassicon" src="search-bold.svg">
+    </div>
+  </div>
+
+  <div class="gray-line">
+    <div class="headline">
+      <div class="breaking-news">
+        <img class="thunder" src="thunder.png"> BREAKING NEWS
+      </div>
+
+      <div class="local">
+        Faridabad man shot by neighbo...
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="weather">
+        <img class="cloud" src="reshot-icon-weather-X3N7PHUCLR.svg">
+      </div>
+
+      <div class="date">
+        43 &deg; C June 4, 2023
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper">
+
+    <div class="news1">
+      <div class="img1div">
+        <img id="image1" class="img1" src="6oe4v5ko_hardik-pandya-mi-bcci_625x300_25_March_24.jpeg">
+      </div>
+
+      <div class="cat">
+        <div id="type1" class="catwindow">
+          Sports
+        </div>
+        <div class="catwindow">
+          Featured
+        </div>
+      </div>
+
+      <div id="hl1" class="text1">
+        Hardik Pandya breaks record by becoming the most hate...
+      </div>
+
+      <div class="author">
+        <div class="channel-logo">
+          <img class="logo" src="avatars-000321245778-5wxb1g-t240x240.jpg">
+        </div>
+        <div id="authors1" class="author-name">
+          Theme...
+        </div>
+        <div class="calendar-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="calendar">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+          </svg>
+        </div>
+        <div id="date1" class="post-date">
+          September 11, 2001
+        </div>
+      </div>
+
+    </div>
+
+    <div class="news2">
+      <div class="img2div">
+        <img id="image2" class="img2" src="delhi-india-november-21-2017-600nw-761746732.jpeg">
+      </div>
+
+      <div class="cat">
+        <div id="type2" class="catwindow">
+          Culture
+        </div>
+        <div class="catwindow">
+          Featured
+        </div>
+      </div>
+
+      <div id="hl2" class="text2">
+        Delhi pollution kills man after two d...
+      </div>
+
+      <div class="author">
+
+        <div class="channel-logo">
+          <img class="logo" src="avatars-000321245778-5wxb1g-t240x240.jpg">
+        </div>
+        <div id="authors2" class="author-name">
+          Theme...
+        </div>
+
+
+        <div class="calendar-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="calendar">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+          </svg>
+        </div>
+        <div id="date2" class="post-date">
+          July 11, 2001
+        </div>
+
+      </div>
+    </div>
+
+    <div class="vertical-news">
+
+      <div class="news3">
+        <div class="img3div">
+          <img id="image3" class="img3" src="milk-tea-recipe.jpg">
+        </div>
+
+        <div class="cat">
+          <div id="type3" class="catwindow">
+            Food
+          </div>
+          <div class="catwindow">
+            Featured
+          </div>
+        </div>
+
+        <div id="hl3" class="text3">
+          10 reasons why tea tastes much bet...
+        </div>
+
+        <div class="author">
+
+          <div class="channel-logo">
+            <img class="logo" src="avatars-000321245778-5wxb1g-t240x240.jpg">
+          </div>
+          <div id="authors3" class="author-name">
+            Theme...
+          </div>
+
+
+          <div class="calendar-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="calendar">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+            </svg>
+          </div>
+          <div id="date3" class="post-date">
+            July 11, 2001
+          </div>
+
+        </div>
+      </div>
+
+      <div class="news4">
+        <div class="img4div">
+          <img id="image4" class="img4" src="milk-tea-recipe.jpg">
+        </div>
+
+        <div class="cat">
+          <div id="type4" class="catwindow">
+            Food
+          </div>
+          <div class="catwindow">
+            Featured
+          </div>
+        </div>
+
+        <div id="hl4" class="text3">
+          10 reasons why tea tastes much bet...
+        </div>
+
+        <div class="author">
+
+          <div class="channel-logo">
+            <img class="logo" src="avatars-000321245778-5wxb1g-t240x240.jpg">
+          </div>
+          <div id="authors4" class="author-name">
+            Theme...
+          </div>
+
+
+          <div class="calendar-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="calendar">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+            </svg>
+          </div>
+          <div id="date4" class="post-date">
+            July 11, 2001
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar">
+
+      <div class="latestnav">
+        <div class="nav-items">
+          Latest
+        </div>
+        <div class="nav-items">
+          Popular
+        </div>
+      </div>
+
+      <div class="sidebar-news">
+        <div>
+          <img id="image5" class="sidebar-img" src="Indian-team_1200x768.jpeg">
+        </div>
+        <div class="sidebar-text">
+          <div id="hl5" class="sidebar-headline">
+            India beat Pakistan to win inaugral T20 World Cup 200...
+          </div>
+          <div class="sidebar-date">
+            <div class="calendar-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="sidebar-calendar">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+              </svg>
+            </div>
+            <div id="date5">
+              September 25, 2007
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar-news">
+        <div>
+          <img id="image6" class="sidebar-img" src="Indian-team_1200x768.jpeg">
+        </div>
+        <div class="sidebar-text">
+          <div id="hl6" class="sidebar-headline">
+            India beat Pakistan to win inaugral T20 World Cup 200...
+          </div>
+          <div class="sidebar-date">
+            <div class="calendar-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="sidebar-calendar">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+              </svg>
+            </div>
+            <div id="date6">
+              September 25, 2007
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar-news">
+        <div>
+          <img id="image7" class="sidebar-img" src="Indian-team_1200x768.jpeg">
+        </div>
+        <div class="sidebar-text">
+          <div id="hl7" class="sidebar-headline">
+            India beat Pakistan to win inaugral T20 World Cup 200...
+          </div>
+          <div class="sidebar-date">
+            <div class="calendar-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="sidebar-calendar">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+              </svg>
+            </div>
+            <div id="date7">
+              September 25, 2007
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar-news">
+        <div>
+          <img id="image8" class="sidebar-img" src="Indian-team_1200x768.jpeg">
+        </div>
+        <div class="sidebar-text">
+          <div id="hl8" class="sidebar-headline">
+            India beat Pakistan to win inaugral T20 World Cup 200...
+          </div>
+          <div class="sidebar-date">
+            <div class="calendar-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="sidebar-calendar">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+              </svg>
+            </div>
+            <div id="date8">
+              September 25, 2007
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar-news">
+        <div>
+          <img id="image9" class="sidebar-img" src="Indian-team_1200x768.jpeg">
+        </div>
+        <div class="sidebar-text">
+          <div id="hl9" class="sidebar-headline">
+            India beat Pakistan to win inaugral T20 World Cup 200...
+          </div>
+          <div class="sidebar-date">
+            <div class="calendar-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="sidebar-calendar">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+              </svg>
+            </div>
+            <div id="date9">
+              September 25, 2007
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-news">
+        <div>
+          <img id="image10" class="sidebar-img" src="Indian-team_1200x768.jpeg">
+        </div>
+        <div class="sidebar-text">
+          <div id="hl10" class="sidebar-headline">
+            India beat Pakistan to win inaugral T20 World Cup 200...
+          </div>
+          <div class="sidebar-date">
+            <div class="calendar-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="sidebar-calendar">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+              </svg>
+            </div>
+            <div id="date10">
+              September 25, 2007
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="task2.js"></script>
+</body>
+
+</html>
